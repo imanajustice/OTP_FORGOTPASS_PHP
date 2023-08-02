@@ -1,2 +1,2 @@
-# otp_forgotPass
- Forgot password system with OTP 
+# PHP OTP LOGIN AND FORGOT PASSWORD SYSTEM
+ Imana Justice and Lorenz Telesco Collab 
