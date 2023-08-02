@@ -60,4 +60,4 @@ License
 This project is licensed under the MIT License.
 
 Happy coding! 😄🚀
-Regards :EMOJICODE💙 Taylor X Lawrence
+Regards💙 : Taylor X Lawrence
