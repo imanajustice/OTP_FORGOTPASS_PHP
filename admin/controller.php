@@ -72,21 +72,25 @@ if(isset($_POST['verifyEmail'])){    //Our button
 }
 
 // change Password
-if(isset($_POST['changePassword'])){
+if(isset($_POST['changePassword'])){  //Our {} as defined in newPassword.php line 31&32
     $password = md5($_POST['password']);
+    // Message Digest Method 5) is a cryptographic hash algorithm used to generate a 128-bit digest from a string of any length. It represents the digests as 32 digit hexadecimal numbers.
     $confirmPassword = md5($_POST['confirmPassword']);
+    // $password and $confirmPassword are the same thing since it's just a confirmation
     
-    if (strlen($_POST['password']) < 8) {
+    if (strlen($_POST['password']) < 8) { //strlen means "string Length"
         $errors['password_error'] = 'Use 8 or more characters with a mix of letters, numbers & symbols';
     } else {
-        // if password not matched so
+        // if password not matched deny access
         if ($_POST['password'] != $_POST['confirmPassword']) {
             $errors['password_error'] = 'Password not matched';
         } else {
+            // If passwords match, it proceeds to set the new password in  the users table under the $email that is active
             $email = $_SESSION['email'];
             $updatePassword = "UPDATE users SET password = '$password' WHERE email = '$email'";
             $updatePass = mysqli_query($conn, $updatePassword) or die("Query Failed");
             session_unset($email);
+            //reset the session $email and take back to the login page.
             session_destroy();
             header('location: login.php');
         }
