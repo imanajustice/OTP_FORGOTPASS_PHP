@@ -27,6 +27,7 @@
                     $sender = 'From:info@refoveo.recen.io';
                     // parse this data to your php mailer for emailing
                     header('location: mailer/mail.php?action=reset&mail=$email&pd=$code');
+                    // We will do an implementation using SMS if Telesco finds time
 
                     if (mail($email, $subject, $message, $sender)) {
                         $message = "We've sent a verification code to your Email <br> $email";
