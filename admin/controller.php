@@ -47,15 +47,21 @@
             $errors['db_error'] = "Failed while checking email from database!";
         }
     }
-if(isset($_POST['verifyEmail'])){
+
+if(isset($_POST['verifyEmail'])){    //Our button
     $_SESSION['message'] = "";
-    $OTPverify = mysqli_real_escape_string($conn, $_POST['OTPverify']);
+    // We declare another variable $OTPverify that takes data from verifyEmail.php 
+    $OTPverify = mysqli_real_escape_string($conn, $_POST['OTPverify']); //OTPverify was the name of our input form
     $verifyQuery = "SELECT * FROM users WHERE code = $OTPverify";
+    // Checks from users to see which user has a OTP that is equal to the one just keyed in (Remember we stored 
+    // the OTP when we created it)
     $runVerifyQuery = mysqli_query($conn, $verifyQuery);
     if($runVerifyQuery){
         if(mysqli_num_rows($runVerifyQuery) > 0){
+            //WE now reset the code column in our database for future use because we've found our user
             $newQuery = "UPDATE users SET code = 0";
             $run = mysqli_query($conn,$newQuery);
+            //Redirect to another page newPassword.php
             header("location: newPassword.php");
         }else{
             $errors['verification_error'] = "Invalid Verification Code";

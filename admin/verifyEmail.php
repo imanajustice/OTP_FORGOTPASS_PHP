@@ -35,7 +35,7 @@
             <!-- type can be different according to what you're keying in, from date to text etc -->
             <input type="number" name="OTPverify" placeholder="Verification Code" required><br>
             <input type="submit" name="verifyEmail" value="Verify">
-            <!-- Submit button parses the OTP you've keyed in to the controller.php -->
+            <!-- Submit button parses the OTP you've keyed in to the controller.php with the var= OTPverify button=verifyEmail -->
         </form>
     </div>
 </body>
