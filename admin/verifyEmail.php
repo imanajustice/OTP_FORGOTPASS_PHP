@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id="container">
+        <!-- This is the next page after keying in your email  -->
         <div id="line"></div>
+        <!-- Here, you are supposed to key in the code that was emailed in controller.php line 29 -->
         <form action="verifyEmail.php" method="POST" autocomplete="off">
             <?php
             if(isset($_SESSION['message'])){
@@ -18,6 +20,7 @@
                 <div id="alert"><?php echo $_SESSION['message']; ?></div>
                 <?php
             }
+            // Error is displayed above
             ?>
 
             <?php
@@ -29,8 +32,10 @@
                 }
             }
             ?>  
+            <!-- type can be different according to what you're keying in, from date to text etc -->
             <input type="number" name="OTPverify" placeholder="Verification Code" required><br>
             <input type="submit" name="verifyEmail" value="Verify">
+            <!-- Submit button parses the OTP you've keyed in to the controller.php -->
         </form>
     </div>
 </body>

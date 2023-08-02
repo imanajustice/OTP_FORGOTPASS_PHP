@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/forgot.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Font: Source Sans Pro -->

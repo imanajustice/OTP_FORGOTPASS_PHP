@@ -85,4 +85,4 @@ if(isset($_POST['changePassword'])){
             header('location: login.php');
         }
     }
-}`  `
+}
