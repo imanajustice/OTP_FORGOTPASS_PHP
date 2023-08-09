@@ -1,3 +1,4 @@
+// If you have any difficulty with utilizing this, kindly email me on imana@refoveo.net for integration at a fee or for the full set of code
 <?php
     include_once("connection.php");
     session_start();
