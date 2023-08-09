@@ -20,4 +20,5 @@ if($_GET['action'] == 'reset'){
     		";
     }
 }
+// heres the mailer
 ?>
