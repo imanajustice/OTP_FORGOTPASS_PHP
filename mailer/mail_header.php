@@ -13,21 +13,21 @@ $mail->isSMTP();
 
 $mail->SMTPDebug = 2;
 
-$mail->Host = 'Your host here';
+$mail->Host = 'smtp@gmail.com';
 
 $mail->Port = 587;
 
 $mail->SMTPAuth = true;
 
-$mail->Username = '';
+$mail->Username = 'telescodev@gmail.com';
 
-$mail->Password = '';
+$mail->Password = 'aivpqwfonpcxgcde';
 
-$mail->setFrom('info@refoveo.recen.io', 'Taylor');
+$mail->setFrom('telescodev@gmail.com', 'Telesco');
 
-$mail->addReplyTo('info@refoveo.recen.io', 'Taylor');
+$mail->addReplyTo('telescodev@gmail.com', 'Telesco');
 
-$mail->addAddress('imaanajustice@gmail.com', 'Imana');
+$mail->addAddress('telescolawrence@gmail.com', 'Lorens');
 
 $to = $_GET['mail'];
 $mail->addAddress($to);
